@@ -18,7 +18,7 @@ module.exports = {
 		);
 	},
 	getUsers: callBack => {
-		pool.query(`select fname,lname,email from registration`,
+		pool.query(`select id,fname,lname,email from registration`,
 			[],
 			(error, results,fields) => {
 				if(error){
@@ -29,7 +29,7 @@ module.exports = {
 		);
 	},
 	getUserByUserId: (id, callBack) => {
-		pool.query(`select fname,lname,email from registration where id=?`,
+		pool.query(`select id,fname,lname,email from registration where id=?`,
 			[id],
 			(error, results,fields) => {
 				if(error){
